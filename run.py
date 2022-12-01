@@ -1,4 +1,4 @@
-
+current_question = 0
 
 
 
@@ -34,6 +34,9 @@ def ask_question(list):
         if question in question_list[list]['answers']:
             if question == question_list[list]['answers'][0]:
                 print('you turn left')
+                global current_question
+                current_question = 1
+                print(current_question)
                 ask_question(1)
                 
         else: 
