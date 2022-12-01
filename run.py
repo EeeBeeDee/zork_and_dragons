@@ -1,6 +1,31 @@
 current_question = 0
 
-
+class_list = [
+    {
+        'name': 'Knight',
+        'health_points': 15,
+        'skill_points': 10,
+        'skills': [{'name': 'shield bash', 'attack': 2, 'special': 1}],
+        'attack': 3,
+        'dex': 3
+    },
+    {
+        'name': 'Knight',
+        'health_points': 15,
+        'skill_points': 10,
+        'skills': [{'name': 'shield bash', 'attack': 2, 'special': 1}],
+        'attack': 3,
+        'dex': 3
+    },
+    {
+        'name': 'Knight',
+        'health_points': 15,
+        'skill_points': 10,
+        'skills': [{'name': 'shield bash', 'attack': 2, 'special': 1}],
+        'attack': 3,
+        'dex': 3
+    }
+]
 
 
 question_list = [
@@ -29,21 +54,22 @@ question_list = [
 
 def ask_question(list):
     while True:
-        question = input(f"{question_list[list]['question']} \n")
+        question_obj = question_list[list]
+        question = input(f"{question_obj['question']}.")
 
-        if question in question_list[list]['answers']:
-            if question == question_list[list]['answers'][0]:
-                print('you turn left')
+        if question in question_obj['answers']:
+            if question == question_obj['answers'][0]:
+                print('you turn left \n')
                 global current_question
                 current_question = 1
-                print(current_question)
-                ask_question(1)
+                ask_question(current_question)
                 
         else: 
-            print('Invalid option. Try again!')
+            print('Invalid option. Try again!\n')
 
 
-
+def stun():
+    print()
 
 
 
