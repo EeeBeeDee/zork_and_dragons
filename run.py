@@ -45,6 +45,7 @@ def char_select(number):
 
         choice = input(f"Do you choose {colored('knight', 'red')}, {colored('mage', 'red')}, {colored('archer', 'red')}\n")
 
+
         if choice == 'knight':
             return knight
         elif choice == 'mage':
@@ -101,11 +102,11 @@ def item_screen():
 
     print(f"You have:\n\n{item_list['health_potion']} Health Potions\n{item_list['skill_potion']} Skill potions\n{item_list['coin']} Coins\n\n")
 
-    print(f"{p1['name']}\nHP: {p1['health_points']}\nSkill Points: {p1['skill_points']}\nSkills:\n{colored(p1['skills'][0]['name'], 'green')} - {p1['skills'][0]['dis']}\n{colored(p1['skills'][1]['name'], 'green')} - {p1['skills'][1]['dis']}\n\n")
+    print(f"{p1['name']} -- {p1['player_name']}\nHP: {p1['health_points']}\nSkill Points: {p1['skill_points']}\nSkills:\n{colored(p1['skills'][0]['name'], 'green')} - {p1['skills'][0]['dis']}\n{colored(p1['skills'][1]['name'], 'green')} - {p1['skills'][1]['dis']}\n\n")
 
-    print(f"{p2['name']}\nHP: {p2['health_points']}\nSkill Points: {p2['skill_points']}\nSkills:\n{colored(p2['skills'][0]['name'], 'green')} - {p2['skills'][0]['dis']}\n{colored(p2['skills'][1]['name'], 'green')} - {p2['skills'][1]['dis']}\n\n")
+    print(f"{p2['name']} -- {p2['player_name']}\nHP: {p2['health_points']}\nSkill Points: {p2['skill_points']}\nSkills:\n{colored(p2['skills'][0]['name'], 'green')} - {p2['skills'][0]['dis']}\n{colored(p2['skills'][1]['name'], 'green')} - {p2['skills'][1]['dis']}\n\n")
 
-    print(f"{p3['name']}\nHP: {p3['health_points']}\nSkill Points: {p3['skill_points']}\nSkills:\n{colored(p3['skills'][0]['name'], 'green')} - {p3['skills'][0]['dis']}\n{colored(p3['skills'][1]['name'], 'green')} - {p3['skills'][1]['dis']}\n\n")
+    print(f"{p3['name']} -- {p3['player_name']}\nHP: {p3['health_points']}\nSkill Points: {p3['skill_points']}\nSkills:\n{colored(p3['skills'][0]['name'], 'green')} - {p3['skills'][0]['dis']}\n{colored(p3['skills'][1]['name'], 'green')} - {p3['skills'][1]['dis']}\n\n")
 
 
     input('\nHit any key to return')
@@ -120,11 +121,15 @@ def main():
     player1 = char_select('first')
     player2 = char_select('second')
     player3 = char_select('third')
+    os.system('clear')
     party_list.append(player1)
     party_list.append(player2)
     party_list.append(player3)
+    print(len(party_list))
+    party_list[0]['player_name'] = input('Name your first character\n\n')
+    party_list[1]['player_name'] = input('\nName your second character\n\n')
+    party_list[2]['player_name'] = input('\nName your third character\n\n')
     os.system('clear')
-    # print(party_list)
     ask_question(0)
 
 main()
