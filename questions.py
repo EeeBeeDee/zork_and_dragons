@@ -30,14 +30,22 @@ question_list = [
         # 3
         'question': f"With the goblin behind you, you come across a small campsite littered with a few caravans to your left. You also notice a riverbed to your right. do you try {colored('talk', 'red')} to the camp, check the {colored('river', 'red')}', or press {colored('forward', 'red')}",
         'answers': ['talk', 'river', 'forwards'],
-        'ans1': ['You turn left', 1, 'no_fight'],
-        'ans2': ['You turn Right', 2, 'no_fight'],
-        'ans3': ['You head forwards', 3, 'no_fight']
+        'ans1': ['You call out to see if anyone is in the camp', 4, 'no_fight'],
+        'ans2': ['You head towards the river', 5, 'no_fight'],
+        'ans3': ['You head forwards along the path', 6, 'no_fight']
     },
     {
         # 4
-        'question': '5',
-        'answers': ['a', 'b', 'c'],
+        'question': f"Two men approach, they seem friendly enough but ou notice a bit of blood on one mans clothes, you exchange pleasantries and tell them why you have set out on your quest. They seem overjoyed that you plan to take down the dragon and offer to let you rest. Do you {colored('rest', 'red')} here, decide to check the {colored('river', 'red')} behind you or press {colored('forward', 'red')}",
+        'answers': ['rest', 'river', 'forwards'],
+        'ans1': ['You turn left', 1, 'no_fight'],
+        'ans2': ['You turn Right', 5, 'no_fight'],
+        'ans3': ['You head forwards', 3, 'no_fight']
+    },
+    {
+        # 5
+        'question': f"Approaching the riverbed you notice a small rickety boat you could potentially use to get down stream. You could also just use it to cross the river and continue on foot. Do you take the {colored('boat', 'red')} down stream, use it to {colored('cross', 'red')}' the river, or turn back and press {colored('forwards', 'red')} along the path you just left",
+        'answers': ['boat', 'cross', 'forwards'],
         'ans1': ['You turn left', 1, 'no_fight'],
         'ans2': ['You turn Right', 2, 'no_fight'],
         'ans3': ['You head forwards', 3, 'no_fight']
