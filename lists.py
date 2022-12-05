@@ -17,7 +17,7 @@ class_list = [
         'skill_points': 20,
         'attack': 2,
         'skills': [{'name': 'Fireball', 'attack': 5, 'special': None, 'dis': 'Deals 4 damage to opponent. Costs: 3SP', 'cost': 4},
-        {'name': 'Heal', 'attack': 0, 'special': 2, 'dis': 'Heal any chosen ally by 5HP. Costs: 3SP', 'cost': 3}],
+        {'name': 'Heal', 'attack': 0, 'special': 2, 'dis': 'Heal any chosen ally by 5HP. Costs: 5SP', 'cost': 5}],
         'dex': 3
     },
     {
