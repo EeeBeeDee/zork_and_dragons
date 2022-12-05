@@ -35,6 +35,12 @@ monster_list = [
 
 ]
 
+item_list = {
+    'health_potion': 3,
+    'skill_potion': 3,
+    'coin': 50
+}
+
 
 question_list = [
     {
