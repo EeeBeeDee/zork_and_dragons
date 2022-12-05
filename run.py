@@ -9,26 +9,33 @@ class_list = [
         'name': 'Knight',
         'health_points': 15,
         'skill_points': 10,
-        'skills': [{'name': 'shield bash', 'attack': 2, 'special': 1}],
         'attack': 3,
+        'skills': [{'name': 'shield bash', 'attack': 2, 'special': 0, 'dis': 'deals 2 damage and has 50% chance to inflict stun causing opponent to miss next turn. Costs 2sp', 'cost': 2}, 
+        {'name': 'heros shield', 'attack': 0, 'special': 1, 'dis': 'Take no damage if attacked next enemy turn. Costs 3SP', 'cost': 3}],
         'dex': 3
     },
     {
-        'name': 'Knight',
-        'health_points': 15,
-        'skill_points': 10,
-        'skills': [{'name': 'shield bash', 'attack': 2, 'special': 1}],
-        'attack': 3,
+        'name': 'mage',
+        'health_points': 10,
+        'skill_points': 20,
+        'attack': 2,
+        'skills': [{'name': 'Fireball', 'attack': 5, 'special': None, 'dis': 'Deals 4 damage to opponent. Costs: 3SP', 'cost': 4},
+        {'name': 'Heal', 'attack': 0, 'special': 2, 'dis': 'Heal any chosen ally by 5HP. Costs: 3SP', 'cost': 3}],
         'dex': 3
     },
     {
-        'name': 'Knight',
-        'health_points': 15,
-        'skill_points': 10,
-        'skills': [{'name': 'shield bash', 'attack': 2, 'special': 1}],
-        'attack': 3,
-        'dex': 3
+        'name': 'archer',
+        'health_points': 10,
+        'skill_points': 15,
+        'attack': 2,
+        'skills': [{'name': 'Double shot', 'attack': 4, 'special': None, 'dis': 'Deals 4 damage. Costs 3SP', 'cost': 3},
+        {'name': 'cripple', 'attack': 2, 'special': 3, 'dis': 'Deal damage and also weaken enemy attack by 1. Costs: 4SP', 'cost': 4}],
+        'dex': 5
     }
+]
+
+party_list = [
+
 ]
 
 monster_list = [
@@ -101,6 +108,33 @@ def intro():
     else:
         print('Invalid option. Try again!\n')
 
+def char_select(number):
+    os.system('clear')
+    knight = class_list[0]
+    mage = class_list[1]
+    archer = class_list[2]
+    print(f"Choose your {number} character!")
+
+    while True:
+        print(f"{knight['name']}\nHP: {knight['health_points']}\nSkill Points: {knight['skill_points']}\nSkills:\n{colored(knight['skills'][0]['name'], 'green')} - {knight['skills'][0]['dis']}\n{colored(knight['skills'][1]['name'], 'green')} - {knight['skills'][1]['dis']}\n\n")
+
+        print(f"{mage['name']}\nHP: {mage['health_points']}\nSkill Points: {mage['skill_points']}\nSkills:\n{colored(mage['skills'][0]['name'], 'green')} - {mage['skills'][0]['dis']}\n{colored(mage['skills'][1]['name'], 'green')} - {mage['skills'][1]['dis']}\n\n")
+
+        print(f"{archer['name']}\nHP: {archer['health_points']}\nSkill Points: {archer['skill_points']}\nSkills:\n{colored(archer['skills'][0]['name'], 'green')} - {archer['skills'][0]['dis']}\n{colored(archer['skills'][1]['name'], 'green')} - {archer['skills'][1]['dis']}\n\n")
+
+        choice = input(f"Do you choose {colored('knight', 'red')}, {colored('mage', 'red')}, {colored('archer', 'red')}\n")
+
+        if choice == 'knight':
+            return knight
+        elif choice == 'mage':
+            return mage
+        elif choice == 'archer':
+            return archer
+        else:
+            os.system('clear')
+            print('Invalid option. Try again!\n')
+
+
 
 def ask_question(list):
     while True:
@@ -138,6 +172,14 @@ def stun():
 
 def main():
     intro()
+    player1 = char_select('first')
+    player2 = char_select('second')
+    player3 = char_select('third')
+    party_list.append(player1)
+    party_list.append(player2)
+    party_list.append(player3)
+    os.system('clear')
+    # print(party_list)
     ask_question(0)
 
 main()
