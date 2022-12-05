@@ -78,7 +78,13 @@ question_list = [
 def intro():
     intro_text = colored('\n WELCOME TO ZORK AND DRAGONS! \n', 'green')
     print(intro_text)
-    print(f"A text based rpg adventure where you choose 3 party members and set off on a quest to defeat the dark dragon. \n At every stop in your journey you will be given 3 options to progress. the terminal command needed for each one will be highlighted in {colored('red', 'red')} like this!\n")
+    print(f"A text based rpg adventure where you choose 3 party members and set off on a quest to defeat the dark dragon. At every stop in your journey you will be given 3 options to progress. the terminal command needed for each one will be highlighted in {colored('red', 'red')} like this!\n")
+
+    print('You will choose a team of 3 from 4 different adventurers and start of with 3 health potions, 3 skill potions and 50 coins\n')
+
+    print(f"At any time during your quest type {colored('item', 'green')} to open your inventory and see your current health and skill points\n")
+
+
 
     question = input(f"please enter {colored('y', 'red')} to progress to the your character selection\n")
 
