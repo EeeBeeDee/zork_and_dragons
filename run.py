@@ -1,7 +1,8 @@
 from termcolor import colored
 import os 
 
-from lists import class_list, party_list, monster_list, question_list, item_list
+from lists import class_list, party_list, monster_list,  item_list
+from questions import question_list
 
 current_question = 0
 current_monster = 0
@@ -113,6 +114,12 @@ def item_screen():
     os.system('clear')
     ask_question(current_question) 
 
+def name_select():
+    party_list[0]['player_name'] = input('Name your first character\n\n')
+    party_list[1]['player_name'] = input('\nName your second character\n\n')
+    party_list[2]['player_name'] = input('\nName your third character\n\n')
+    party_list[2]['health_points'] -= 2
+
 def stun():
     print()
 
@@ -126,9 +133,7 @@ def main():
     party_list.append(player2)
     party_list.append(player3)
     print(len(party_list))
-    party_list[0]['player_name'] = input('Name your first character\n\n')
-    party_list[1]['player_name'] = input('\nName your second character\n\n')
-    party_list[2]['player_name'] = input('\nName your third character\n\n')
+    name_select()
     os.system('clear')
     ask_question(0)
 
