@@ -64,6 +64,7 @@ def ask_question(list):
         os.system('clear')
         global current_question
         global current_monster
+        global party_list
 
         if question in question_obj['answers']:
             if question == question_obj['answers'][0]:
