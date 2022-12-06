@@ -20,7 +20,7 @@ question_list = [
     },
     {
         # 2 - goblin - talk
-        'question': f"The Goblin demands you give him a health potion if you wish to pass. Do you {colored('fight', 'red')}, {colored('give', 'red')}, {colored('run', 'red')} fight, give, run",
+        'question': f"The Goblin demands you give him a health potion if you wish to pass. Do you {colored('fight', 'red')}, {colored('give', 'red')}, {colored('run', 'red')}",
         'answers': ['fight', 'give', 'run'],
         'ans1': ['You turn left', 1, 'fight'],
         'ans2': ['You hand over 1 potion', 3, 'no_fight'],
@@ -63,8 +63,8 @@ question_list = [
         # 7 - entering town 
         'question': f"As you walk in you notice an inn and a general shop. You ponder whither you have time to rest or shop or should you press on towards the mountain.Do you enter the {colored('inn', 'red')}, decide to {colored('shop', 'red')} or head towards the castle by the {colored('mountain', 'red')}",
         'answers': ['inn', 'shop', 'mountain'],
-        'ans1': ['You step into the main plaza of the town of Riverstone', 7, 'no_fight'],
-        'ans2': ['Crossing the bridge you end up back where it all began,you decide to rest awhile before starting again', 0, 'no_fight'],
+        'ans1': ['You enter the inn', 8, 'no_fight'],
+        'ans2': ['you enter the shop', 0, 'no_fight'],
         'ans3': ['You head forwards', 3, 'no_fight']
     },
      {
