@@ -1,5 +1,6 @@
 from termcolor import colored
-import os 
+import os
+import copy
 
 from lists import class_list, party_list, monster_list,  item_list
 from questions import question_list
@@ -8,20 +9,35 @@ current_question = 0
 current_monster = 0
 
 
-
 def intro():
     intro_text = colored('\nWELCOME TO ZORK AND DRAGONS! \n', 'green')
     print(intro_text)
-    print(f"A text based rpg adventure where you choose 3 party members and set off on a quest to defeat the dark dragon. At every stop in your journey you will be given 3 options to progress. the terminal command needed for each one will be highlighted in {colored('red', 'red')} like this!\n")
+    print(
+        ("A text based rpg adventure where you choose 3 party members and "
+            "set off on a quest to defeat the dark dragon. At every stop in "
+            "your journey you will be given 3 options to progress. the "
+            "terminal command needed for each one will be highlighted in "
+            f"{colored('red', 'red')} like this!\n")
+    )
 
-    print('You will choose a team of 3 from 4 different adventurers and start of with 3 health potions, 3 skill potions and 50 coins\n')
+    print(
+        ('You will choose a team of 3 from 4 different adventurers and '
+            'start of with 3 health potions, 3 skill potions '
+            'and 50 coins\n')
+    )
 
-    print(f"At any time during your quest type {colored('item', 'green')} to open your inventory and see your current health and skill points\nOr type {colored('quit', 'red')} to restart the game and come back to this screen!\n\n")
-
-
+    print(
+        (f"At any time during your quest type {colored('item', 'green')} to "
+            "open your inventory and see your current health and skill points "
+            f"\nOr type {colored('quit', 'red')} to restart the "
+            "game and come back to this screen!\n\n")
+    )
 
     while True:
-        question = input(f"please enter {colored('y', 'red')} to progress to the your character selection\n")
+        question = input(
+                    (f"please enter {colored('y', 'red')} to progress "
+                        "to the your character selection\n")
+                    )
 
         if question == 'y':
             os.system('clear')
@@ -29,6 +45,7 @@ def intro():
         else:
             os.system('clear')
             print('Invalid option. Try again!\n')
+
 
 def char_select(number):
     os.system('clear')
@@ -38,14 +55,38 @@ def char_select(number):
     print(f"Choose your {number} character!\n\n")
 
     while True:
-        print(f"{knight['name']}\nHP: {knight['health_points']}\nSkill Points: {knight['skill_points']}\nSkills:\n{colored(knight['skills'][0]['name'], 'green')} - {knight['skills'][0]['dis']}\n{colored(knight['skills'][1]['name'], 'green')} - {knight['skills'][1]['dis']}\n\n")
+        print(
+            (f"{knight['name']}\nHP: {knight['health_points']}\n"
+                f"Skill Points: {knight['skill_points']}\n"
+                f"Skills:\n{colored(knight['skills'][0]['name'], 'green')} "
+                f"- {knight['skills'][0]['dis']}\n"
+                f"{colored(knight['skills'][1]['name'], 'green')} "
+                f"- {knight['skills'][1]['dis']}\n\n")
+        )
 
-        print(f"{mage['name']}\nHP: {mage['health_points']}\nSkill Points: {mage['skill_points']}\nSkills:\n{colored(mage['skills'][0]['name'], 'green')} - {mage['skills'][0]['dis']}\n{colored(mage['skills'][1]['name'], 'green')} - {mage['skills'][1]['dis']}\n\n")
+        print(
+            (f"{mage['name']}\nHP: {mage['health_points']}\n"
+                f"Skill Points: {mage['skill_points']}\n"
+                f"Skills:\n{colored(mage['skills'][0]['name'], 'green')} "
+                f"- {mage['skills'][0]['dis']}\n"
+                f"{colored(mage['skills'][1]['name'], 'green')} "
+                f"- {mage['skills'][1]['dis']}\n\n")
+        )
 
-        print(f"{archer['name']}\nHP: {archer['health_points']}\nSkill Points: {archer['skill_points']}\nSkills:\n{colored(archer['skills'][0]['name'], 'green')} - {archer['skills'][0]['dis']}\n{colored(archer['skills'][1]['name'], 'green')} - {archer['skills'][1]['dis']}\n\n")
+        print(
+            (f"{archer['name']}\nHP: {archer['health_points']}\n"
+                f"Skill Points: {archer['skill_points']}\n"
+                f"Skills:\n{colored(archer['skills'][0]['name'], 'green')} "
+                f"- {archer['skills'][0]['dis']}\n"
+                f"{colored(archer['skills'][1]['name'], 'green')} "
+                f"- {archer['skills'][1]['dis']}\n\n")
+        )
 
-        choice = input(f"Do you choose {colored('knight', 'red')}, {colored('mage', 'red')}, {colored('archer', 'red')}\n")
-
+        choice = input(
+            (f"Do you choose {colored('knight', 'red')}"
+                f", {colored('mage', 'red')},"
+                f" {colored('archer', 'red')}\n")
+        )
 
         if choice == 'knight':
             return knight
@@ -56,7 +97,6 @@ def char_select(number):
         else:
             os.system('clear')
             print('Invalid option. Try again!\n')
-
 
 
 def ask_question(list):
@@ -87,32 +127,58 @@ def ask_question(list):
                 current_question = question_obj['ans3'][1]
                 ask_question(current_question)
         elif question == 'item':
-            item_screen()  
+            item_screen()
         elif question == 'quit':
             current_question = 0
             current_monster = 0
             party_list = []
-            main()  
-        else: 
+            main()
+        else:
             print('Invalid option. Try again!\n')
+
 
 def item_screen():
     p1 = party_list[0]
     p2 = party_list[1]
     p3 = party_list[2]
 
-    print(f"You have:\n\n{item_list['health_potion']} Health Potions\n{item_list['skill_potion']} Skill potions\n{item_list['coin']} Coins\n\n")
+    print(
+        (f"You have:\n\n{item_list['health_potion']} "
+            f"Health Potions\n{item_list['skill_potion']} "
+            f"Skill potions\n{item_list['coin']} Coins\n\n")
+    )
 
-    print(f"{p1['name']} -- {p1['player_name']}\nHP: {p1['health_points']}\nSkill Points: {p1['skill_points']}\nSkills:\n{colored(p1['skills'][0]['name'], 'green')} - {p1['skills'][0]['dis']}\n{colored(p1['skills'][1]['name'], 'green')} - {p1['skills'][1]['dis']}\n\n")
+    print(
+        (f"{p1['name']} -- {p1['player_name']}\n"
+            f"HP: {p1['health_points']}\nSkill Points: {p1['skill_points']}\n"
+            f"Skills:\n{colored(p1['skills'][0]['name'], 'green')} "
+            f"- {p1['skills'][0]['dis']}\n"
+            f"{colored(p1['skills'][1]['name'], 'green')} "
+            f"- {p1['skills'][1]['dis']}\n\n")
+    )
 
-    print(f"{p2['name']} -- {p2['player_name']}\nHP: {p2['health_points']}\nSkill Points: {p2['skill_points']}\nSkills:\n{colored(p2['skills'][0]['name'], 'green')} - {p2['skills'][0]['dis']}\n{colored(p2['skills'][1]['name'], 'green')} - {p2['skills'][1]['dis']}\n\n")
+    print(
+        (f"{p2['name']} -- {p2['player_name']}\n"
+            f"HP: {p2['health_points']}\nSkill Points: {p2['skill_points']}\n"
+            f"Skills:\n{colored(p2['skills'][0]['name'], 'green')} "
+            f"- {p2['skills'][0]['dis']}\n"
+            f"{colored(p2['skills'][1]['name'], 'green')} "
+            f"- {p2['skills'][1]['dis']}\n\n")
+    )
 
-    print(f"{p3['name']} -- {p3['player_name']}\nHP: {p3['health_points']}\nSkill Points: {p3['skill_points']}\nSkills:\n{colored(p3['skills'][0]['name'], 'green')} - {p3['skills'][0]['dis']}\n{colored(p3['skills'][1]['name'], 'green')} - {p3['skills'][1]['dis']}\n\n")
-
+    print(
+        (f"{p3['name']} -- {p3['player_name']}\n"
+            f"HP: {p3['health_points']}\nSkill Points: {p3['skill_points']}\n"
+            f"Skills:\n{colored(p3['skills'][0]['name'], 'green')} "
+            f"- {p3['skills'][0]['dis']}\n"
+            f"{colored(p3['skills'][1]['name'], 'green')} "
+            f"- {p3['skills'][1]['dis']}\n\n")
+    )
 
     input('\nHit any key to return')
     os.system('clear')
-    ask_question(current_question) 
+    ask_question(current_question)
+
 
 def name_select():
     party_list[0]['player_name'] = input('Name your first character\n\n')
@@ -120,24 +186,27 @@ def name_select():
     party_list[2]['player_name'] = input('\nName your third character\n\n')
     party_list[2]['health_points'] -= 2
 
+
 def stun():
     print()
 
+
 def main():
     intro()
-    player1 = char_select('first')
-    player2 = char_select('second')
-    player3 = char_select('third')
+    player1 = copy.deepcopy(char_select('first'))
+    player2 = copy.deepcopy(char_select('second'))
+    player3 = copy.deepcopy(char_select('third'))
     os.system('clear')
     party_list.append(player1)
     party_list.append(player2)
     party_list.append(player3)
     name_select()
+    print(player1)
+    print(player2)
+    print(player3)
+    print(party_list)
     os.system('clear')
     ask_question(0)
 
+
 main()
-
-
-
-
