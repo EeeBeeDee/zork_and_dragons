@@ -132,7 +132,6 @@ def main():
     party_list.append(player1)
     party_list.append(player2)
     party_list.append(player3)
-    print(len(party_list))
     name_select()
     os.system('clear')
     ask_question(0)
