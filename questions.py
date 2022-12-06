@@ -29,7 +29,7 @@ question_list = [
     },
     {
         # 3 - after goblin - see camp
-        'question': f"With the goblin behind you, you come across a small campsite littered with a few caravans to your left. You also notice a riverbed to your right. do you try {colored('talk', 'red')} to the camp, check the {colored('river', 'red')}', or press {colored('forward', 'red')}",
+        'question': f"With the goblin behind you, you come across a small campsite littered with a few caravans to your left. You also notice a riverbed to your right. do you try {colored('talk', 'red')} to the camp, check the {colored('river', 'red')}, or press {colored('forward', 'red')}",
         'answers': ['talk', 'river', 'forwards'],
         'ans1': ['You call out to see if anyone is in the camp', 4, 'no_fight'],
         'ans2': ['You head towards the river', 5, 'no_fight'],
