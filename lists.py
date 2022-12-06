@@ -31,13 +31,9 @@ class_list = [
     }
 ]
 
-party_list = [
+party_list = []
 
-]
-
-monster_list = [
-
-]
+monster_list = []
 
 item_list = {
     'health_potion': 3,
