@@ -53,7 +53,7 @@ question_list = [
     },
      {
         # 6 - sailing down the river
-        'question': f"After quite some time and smoothing sailing dulling the parties alertness, the party notices the sound of a waterfall, but just too late. The boat rushes over the edge {colored('--BOOM--','white', 'on_red')}, everyone awakes washed onto a shore. you hear the hustle and bustle of a town just ahead and notice a bridge to the right, Do you head towards the {colored('town', 'red')}', decide to take the {colored('bridge', 'red')}, or head back the way you came following the {colored('river', 'red')}",
+        'question': f"After quite some time and smoothing sailing dulling the parties alertness, the party notices the sound of a waterfall, but just too late. The boat rushes over the edge {colored('--BOOM--','white', 'on_red')}, everyone awakes washed onto a shore. you hear the hustle and bustle of a town just ahead and notice a bridge to the right, Do you head towards the {colored('town', 'red')}, decide to take the {colored('bridge', 'red')}, or head back the way you came following the {colored('river', 'red')}",
         'answers': ['town', 'bridge', 'river'],
         'ans1': ['You step into the main plaza of the town of Riverstone', 7, 'no_fight'],
         'ans2': ['Crossing the bridge you end up back where it all began,you decide to rest awhile before starting again', 0, 'no_fight'],
@@ -61,7 +61,7 @@ question_list = [
     },
      {
         # 7 - entering town 
-        'question': f"As you walk in you notice an inn and a general shop. You ponder whither you have time to rest or shop or should you press on towards the mountain.Do you enter the {colored('inn', 'red')}', decide to {colored('shop', 'red')} or head towards the castle by the {colored('mountain', 'red')}",
+        'question': f"As you walk in you notice an inn and a general shop. You ponder whither you have time to rest or shop or should you press on towards the mountain.Do you enter the {colored('inn', 'red')}, decide to {colored('shop', 'red')} or head towards the castle by the {colored('mountain', 'red')}",
         'answers': ['inn', 'shop', 'mountain'],
         'ans1': ['You step into the main plaza of the town of Riverstone', 7, 'no_fight'],
         'ans2': ['Crossing the bridge you end up back where it all began,you decide to rest awhile before starting again', 0, 'no_fight'],
@@ -69,12 +69,21 @@ question_list = [
     },
      {
         # 8 - inn
-        'question': f"As you walk in you hear a table talking about a man escaping from the dragon castle not long ago. You are greeted by the innkeeper and offered a room for 20 gold. Do you {colored('rest', 'red')}', join the {colored('table', 'red')} to hear more or return to the {colored('town', 'red')} center.",
+        'question': f"As you walk in you hear a table talking about a man escaping from the dragon castle not long ago. You are greeted by the innkeeper and offered a room for 20 gold. Do you {colored('rest', 'red')}, join the {colored('table', 'red')} to hear more or return to the {colored('town', 'red')} center.",
         'answers': ['rest', 'table', 'town'],
-        'ans1': ['You step into the main plaza of the town of Riverstone', 7, 'no_fight'],
-        'ans2': ['Crossing the bridge you end up back where it all began,you decide to rest awhile before starting again', 0, 'no_fight'],
+        'ans1': ['You all sleep well. Felling fully refreshed you step out into the town at dawn ready to continue', 7, 'no_fight'],
+        'ans2': ['You sit down at the table to inquire about what you overheard', 9, 'no_fight'],
         'ans3': ['You head forwards', 3, 'no_fight']
     },
+     {
+        # 9 - table
+        'question': f"The men all fall silent as you sit down. After reassuring them you mean no harm, you ask about this escape. An older man begins to tell you of a secret tunnel. ONe he is will to show you. For a price... 30 gold coins Do you {colored('pay', 'red')}, {colored('threaten', 'red')}  him to show you or return to the entrance of the {colored('inn', 'red')}.",
+        'answers': ['rest', 'table', 'town'],
+        'ans1': ['You all sleep well. Felling fully refreshed you step out into the town at dawn ready to continue', 7, 'no_fight'],
+        'ans2': ['You sit down at the table to inquire about what you overheard', 9, 'no_fight'],
+        'ans3': ['You head forwards', 3, 'no_fight']
+    },
+
 
 
 ]
