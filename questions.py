@@ -88,7 +88,7 @@ question_list = [
             "you could potentially use to get down stream. "
             "You could also just use it to cross the river and "
             f"continue on foot. Do you take the {colored('boat', 'red')} "
-            f"down stream, use it to {colored('cross', 'red')}' the river, "
+            f"down stream, use it to {colored('cross', 'red')} the river, "
             f"or turn back and press {colored('forwards', 'red')} along "
             "the path you just left"
             ),
@@ -96,8 +96,7 @@ question_list = [
         'ans1': [(
             'You all hop into the boat one at a time trying to capsize '
             'it before you even depart. After a few minutes and some '
-            'wet feet you depart down the river', 6, 'no_fight'
-            )],
+            'wet feet you depart down the river'), 6, 'no_fight'],
         'ans2': ['You turn Right', 2, 'no_fight'],
         'ans3': ['You head forwards', 3, 'no_fight']
     },
@@ -117,12 +116,10 @@ question_list = [
         'answers': ['town', 'bridge', 'river'],
         'ans1': [(
             'You step into the main plaza of the town of '
-            'Riverstone', 7, 'no_fight'
-        )],
+            'Riverstone'), 7, 'no_fight'],
         'ans2': [(
             'Crossing the bridge you end up back where it all began, you '
-            'decide to rest awhile before starting again', 0, 'no_fight'
-            )],
+            'decide to rest awhile before starting again'), 0, 'no_fight'],
         'ans3': ['You head forwards', 3, 'no_fight']
     },
     {
@@ -152,12 +149,10 @@ question_list = [
         'answers': ['rest', 'table', 'town'],
         'ans1': [(
             'You all sleep well. Felling fully refreshed you step out into '
-            'the town at dawn ready to continue', 7, 'no_fight'
-            )],
+            'the town at dawn ready to continue'), 7, 'no_fight'],
         'ans2': [(
             'You sit down at the table to inquire about what you '
-            'overheard', 9, 'no_fight'
-            )],
+            'overheard'), 9, 'no_fight'],
         'ans3': ['You head forwards', 3, 'no_fight']
     },
     {
@@ -171,10 +166,79 @@ question_list = [
             "him to show you or return to the entrance of "
             f"the {colored('inn', 'red')}."
             ),
-        'answers': ['rest', 'table', 'town'],
+        'answers': ['pay', 'threaten', 'inn'],
         'ans1': [(
-            'You all sleep well. Felling fully refreshed you step '
-            'out into the town at dawn ready to continue', 7, 'no_fight'
+            'Handing over the coin you demand we leave at once '
+            'to which he agrees'), 10, 'no_fight'],
+        'ans2': [(
+            'You sit down at the table to inquire about what you '
+            'overheard', 9, 'no_fight')],
+        'ans3': ['You head forwards', 3, 'no_fight']
+    },
+    {
+        # 10 - secret entrance
+        'question': (
+            "After a few hours Journey you reach a tiny cave in the side "
+            "of a hill, the old man commends your bravery and gives you "
+            "one last piece of advise 'Beware the gold plated door...'\n"
+            "Barely squeezing through the tiny gap you all press on"
+            "Eventually coming across a trap door, upon climbing through"
+            "you enter the keep proper in what looks to be a torture"
+            "chamber of some sort with its door ajar. "
+            "peaking out you hear armour clad footsteps to the left, "
+            "what seems to be an unkept, unlit hallway straight ahead "
+            "and a freezing cold breeze coming from the path to the right."
+            f"Do you go {colored('left', 'red')}, "
+            f"{colored('straight', 'red')}  "
+            f"or {colored('right', 'red')}."
+            ),
+        'answers': ['left', 'straight', 'right'],
+        'ans1': [(
+            'You run into an armed deamon guard! No choice but to '
+            'fight '), 11, 'fight'],
+        'ans2': [(
+            'You sit down at the table to inquire about what you '
+            'overheard', 9, 'no_fight')],
+        'ans3': ['You head forwards', 3, 'no_fight']
+    },
+    {
+        # 11 - outside throne room - guard
+        'question': (
+            "You manage to slay the guard!! \n"
+            "you realize he was protecting the dark dragons throne room"
+            "It sinks in that this is now the end of your journey..."
+            f"Do you step into the{colored('throne', 'red')} room, "
+            f"continue exploring the {colored('castle', 'red')}  "
+            "or now quaking in your boots decide to "
+            f"{colored('give', 'red')} up and quit?"
+            ),
+        'answers': ['throne', 'castle', 'give'],
+        'ans1': [(
+            'Everyone takes a deep breath and steps into the gold laden '
+            'throne room '), 12, 'fight'],
+        'ans2': [(
+            'You sit down at the table to inquire about what you '
+            'overheard'), 9, 'no_fight'],
+        'ans3': ['You head forwards', 3, 'no_fight']
+    },
+    {
+        # 12 - throne room
+        'question': (
+            "Surrounded by piles of riches on all sides a massive shadow"
+            "looms from the ceiling, a terrifying rumbling voice speaks, "
+            "powerful enough to make your armour rattle and your ears bleed..."
+            "'Finally someone has come, you look quite confident. "
+            "Do you really think you can best me in combat?, or perhaps "
+            "you make know the sacred words? It does not matter,"
+            "your time in this world is at an end!'"
+            f"Do you{colored('fight', 'red')}, "
+            f"{colored('speak', 'red')} the holy words"
+            f"or{colored('beg', 'red')} for your?"
+            ),
+        'answers': ['throne', 'castle', 'give'],
+        'ans1': [(
+            'Everyone takes a deep breath and steps into the gold laden '
+            'throne room ', 12, 'fight'
             )],
         'ans2': [(
             'You sit down at the table to inquire about what you '
