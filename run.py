@@ -113,7 +113,7 @@ def ask_question(list):
         if question in question_obj['answers']:
             if question == question_obj['answers'][0]:
                 if question_obj['ans1'][2] == 'fight':
-                    print('you are in a fight \n \n')
+                    battle_start()
                 else:
                     print(f"{question_obj['ans1'][0]} \n")
                     current_question = question_obj['ans1'][1]
@@ -188,9 +188,9 @@ def item_screen():
 
 def name_select():
     party_list[0]['player_name'] = input('Name your first character\n\n')
+    print(f"{party_list[0]['player_name']}")
     party_list[1]['player_name'] = input('\nName your second character\n\n')
     party_list[2]['player_name'] = input('\nName your third character\n\n')
-    party_list[2]['health_points'] -= 2
 
 
 def main():
