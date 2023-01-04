@@ -33,7 +33,26 @@ class_list = [
 
 party_list = []
 
-monster_list = []
+monster_list = [
+    {
+        'name': 'archer',
+        'health_points': 10,
+        'skill_points': 15,
+        'attack': 3,
+        'skills': [{'name': 'Double shot', 'attack': 5, 'special': None, 'dis': 'Deals 4 damage. Costs 3SP', 'cost': 3},
+        {'name': 'cripple', 'attack': 2, 'special': 3, 'dis': 'Deal damage and also weaken enemy attack by 1. Costs: 4SP', 'cost': 4}],
+        'dex': 5
+    },
+    {
+        'name': 'archer',
+        'health_points': 10,
+        'skill_points': 15,
+        'attack': 3,
+        'skills': [{'name': 'Double shot', 'attack': 5, 'special': None, 'dis': 'Deals 4 damage. Costs 3SP', 'cost': 3},
+        {'name': 'cripple', 'attack': 2, 'special': 3, 'dis': 'Deal damage and also weaken enemy attack by 1. Costs: 4SP', 'cost': 4}],
+        'dex': 5
+    }
+]
 
 item_list = {
     'health_potion': 3,

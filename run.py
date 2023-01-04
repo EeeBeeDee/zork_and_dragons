@@ -4,9 +4,11 @@ import copy
 
 from lists import class_list, party_list, monster_list,  item_list
 from questions import question_list
+from battle import battle_start
 
 current_question = 0
 current_monster = 0
+in_battle = False
 
 
 def intro():
@@ -177,7 +179,11 @@ def item_screen():
 
     input('\nHit any key to return')
     os.system('clear')
-    ask_question(current_question)
+
+    if in_battle is False:
+        ask_question(current_question)
+    elif in_battle:
+        battle_start()
 
 
 def name_select():
@@ -185,10 +191,6 @@ def name_select():
     party_list[1]['player_name'] = input('\nName your second character\n\n')
     party_list[2]['player_name'] = input('\nName your third character\n\n')
     party_list[2]['health_points'] -= 2
-
-
-def stun():
-    print()
 
 
 def main():
