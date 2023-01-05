@@ -4,8 +4,6 @@ import time
 import os
 
 from lists import party_list, monster_list
-# from run import item_screen
-
 
 
 def battle_start(current_monster):
@@ -96,7 +94,6 @@ def battle_start(current_monster):
     def update_stats(player, player_obj):
         player['health_points'] = player_obj.hp
         player['skill_points'] = player_obj.sp
-
 
     print(f"A battle with the {monster_list[current_monster]['name']} begins!\n\n")
 

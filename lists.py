@@ -6,9 +6,8 @@ class_list = [
         'health_points': 15,
         'skill_points': 10,
         'attack': 3,
-        'skills': [{'name': 'shield bash', 'attack': 2, 'special': True, 'dis': 'deals 2 damage and has 50% chance to inflict stun causing opponent to miss next turn. Costs 2sp', 'cost': 2}, 
-        {'name': 'heros shield', 'attack': 0, 'special': False, 'dis': 'Take no damage if attacked next enemy turn. Costs 3SP', 'cost': 3}],
-        'dex': 3,
+        'skills': [{'name': 'Shield Bash', 'attack': 2, 'special': True, 'dis': 'deals 2 damage and has 50% chance to inflict stun causing opponent to miss next turn. Costs 2SP', 'cost': 2}, 
+        {'name': 'Mighty Blow', 'attack': 5, 'special': False, 'dis': 'You Swing your sword with both hands dealing severe damage. Costs 4SP', 'cost': 4}],
         'player_name': ''
     },
     {
@@ -18,7 +17,6 @@ class_list = [
         'attack': 2,
         'skills': [{'name': 'Fireball', 'attack': 5, 'special': False, 'dis': 'Deals 4 damage to opponent. Costs: 3SP', 'cost': 4},
         {'name': 'Heal', 'attack': 0, 'special': False, 'dis': 'Heal yourself by 5HP. Costs: 5SP', 'cost': 5}],
-        'dex': 3,
         'player_name': ''
     },
     {
@@ -26,9 +24,8 @@ class_list = [
         'health_points': 10,
         'skill_points': 15,
         'attack': 3,
-        'skills': [{'name': 'Double shot', 'attack': 5, 'special': None, 'dis': 'Deals 4 damage. Costs 3SP', 'cost': 3},
-        {'name': 'cripple', 'attack': 4, 'special': False, 'dis': 'Deal damage and 50% chance to stun opponent. Costs: 4SP', 'cost': 4}],
-        'dex': 5,
+        'skills': [{'name': 'Double shot', 'attack': 5, 'special': None, 'dis': 'Deals 5 damage. Costs 3SP', 'cost': 3},
+        {'name': 'cripple', 'attack': 3, 'special': True, 'dis': 'Deal damage and 50% chance to stun opponent. Costs: 4SP', 'cost': 4}],
         'player_name': ''
     }
 ]
