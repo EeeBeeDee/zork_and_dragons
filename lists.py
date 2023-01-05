@@ -38,13 +38,10 @@ party_list = []
 
 monster_list = [
     {
-        'name': 'archer',
+        'name': 'goblin',
         'health_points': 10,
-        'skill_points': 15,
-        'attack': 3,
-        'skills': [{'name': 'Double shot', 'attack': 5, 'special': None, 'dis': 'Deals 4 damage. Costs 3SP', 'cost': 3},
-        {'name': 'cripple', 'attack': 2, 'special': 3, 'dis': 'Deal damage and also weaken enemy attack by 1. Costs: 4SP', 'cost': 4}],
-        'dex': 5
+        'attack': 2,
+        'skills': [{'name': 'Slice', 'attack': 5, }]
     },
     {
         'name': 'archer',

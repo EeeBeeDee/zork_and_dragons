@@ -4,10 +4,9 @@ import copy
 
 from lists import class_list, party_list, monster_list,  item_list
 from questions import question_list
-from battle import battle_start
+from battle import battle_start, current_monster
 
 current_question = 0
-current_monster = 0
 in_battle = False
 
 
