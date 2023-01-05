@@ -20,7 +20,7 @@ question_list = [
             f"{colored('run', 'red')}, {colored('talk', 'red')}"
         ),
         'answers': ['fight', 'run', 'talk'],
-        'ans1': ['You turn left', 1, 'fight'],
+        'ans1': ['', 3, 'fight'],
         'ans2': [(
             'You turn tail and run away from the goblin back to '
             'the crossroads', 0, 'no_fight'
@@ -35,7 +35,7 @@ question_list = [
             f"{colored('give', 'red')}, {colored('run', 'red')}"
             ),
         'answers': ['fight', 'give', 'run'],
-        'ans1': ['You turn left', 1, 'fight'],
+        'ans1': ['', 3, 'fight'],
         'ans2': ['You hand over 1 potion', 3, 'no_fight'],
         'ans3': [(
             'You turn tail and run away from the goblin  '

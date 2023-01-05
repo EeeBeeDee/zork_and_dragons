@@ -43,25 +43,29 @@ def battle_start():
             print(f"{player.name} did {player.attack} damage!\n\n")
         elif action == 'skill':
             skill = input(f"Do you want to use {colored('1', 'red')}) {player.skills[0]['name']} or {colored('2', 'red')}) {player.skills[1]['name']}\n")
-            if skill == '1':
+            if skill == '1' and player.sp >= player.skills[0]['cost']:
                 os.system('clear')
+                player.sp = player.sp - player.skills[0]['cost']
                 monster.hp = monster.hp - player.skills[0]['attack']
                 if player.skills[0]['special'] is True:
                     monster.stun = stun()
                 print(f"{player.name} did {player.skills[0]['attack']} damage!\n\n")
                 if monster.stun is True:
                     print("You managed to stun your foe!\n")
+                    monster.stun = True
                 if player.skills[0]['attack'] == 0:
                     player.hp += 5
                     print('You healed yourself for 5HP!\n')
-            elif skill == '2':
+            elif skill == '2' and player.sp >= player.skills[1]['cost']:
                 os.system('clear')
+                player.sp = player.sp - player.skills[0]['cost']
                 monster.hp = monster.hp - player.skills[1]['attack']
                 if player.skills[1]['special'] is True:
                     monster.stun = stun()
                 print(f"{player.name} did {player.skills[1]['attack']} damage!\n\n")
                 if monster.stun is True:
                     print("You managed to stun your foe!\n")
+                    monster.stun = True
                 if player.skills[1]['attack'] == 0:
                     player.hp += 5
                     print('You healed yourself for 5HP!\n')
@@ -69,6 +73,10 @@ def battle_start():
             os.system('clear')
 
     def monster_phase():
+        if monster.hp <= 0:
+            print("The monster is defeated!\n\n")
+            return
+
         if monster.stun is True:
             print('The beast is stunned and misses its turn!')
             monster.stun = False
@@ -103,6 +111,10 @@ def battle_start():
         update_stats(party_list[0], player1)
         update_stats(party_list[1], player2)
         update_stats(party_list[2], player3)
+
+    print(f"Congratulations you have slain the {monster.name}!\n\n")
+    time.sleep(2)
+    return
 
 
 def stun():

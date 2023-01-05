@@ -113,6 +113,8 @@ def ask_question(list):
             if question == question_obj['answers'][0]:
                 if question_obj['ans1'][2] == 'fight':
                     battle_start()
+                    current_question = question_obj['ans1'][1]
+                    ask_question(current_question)
                 else:
                     print(f"{question_obj['ans1'][0]} \n")
                     current_question = question_obj['ans1'][1]
