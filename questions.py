@@ -25,7 +25,8 @@ question_list = [
             'You turn tail and run away from the goblin back to '
             'the crossroads', 0, 'no_fight'
             )],
-        'ans3': ['You try talk to the goblin', 2, 'no_fight']
+        'ans3': ['You try talk to the goblin', 2, 'no_fight'],
+        'monster_number': 0
     },
     {
         # 2 - goblin - talk
@@ -36,12 +37,13 @@ question_list = [
             ),
         'answers': ['fight', 'give', 'run'],
         'ans1': ['', 3, 'fight'],
-        'ans2': ['You hand over 1 potion', 3, 'no_fight'],
+        'ans2': ['You hand over 1 potion', 3, 'give'],
         'ans3': [(
             'You turn tail and run away from the goblin  '
             f'to the crossroads', 0, 'no_fight'
             )],
-        'lose_item': 'health_potion'
+        'lose_item': 'health_potion',
+        'monster_number': 0
     },
     {
         # 3 - after goblin - see camp
@@ -169,7 +171,7 @@ question_list = [
         'answers': ['pay', 'threaten', 'inn'],
         'ans1': [(
             'Handing over the coin you demand we leave at once '
-            'to which he agrees'), 10, 'no_fight'],
+            'to which he agrees'), 10, 'pay'],
         'ans2': [(
             'You sit down at the table to inquire about what you '
             'overheard', 9, 'no_fight')],

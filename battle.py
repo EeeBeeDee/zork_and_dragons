@@ -6,9 +6,9 @@ import os
 from lists import party_list, monster_list
 # from run import item_screen
 
-current_monster = 0
 
-def battle_start():
+
+def battle_start(current_monster):
 
     class Player:
         def __init__(self, char):
@@ -30,7 +30,7 @@ def battle_start():
     player1 = Player(party_list[0])
     player2 = Player(party_list[1])
     player3 = Player(party_list[2])
-    monster = Monster(monster_list[0])
+    monster = Monster(monster_list[current_monster])
 
     party = [player1, player2, player3]
 
