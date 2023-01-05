@@ -85,6 +85,11 @@ def battle_start():
                 print(f"The beast uses {monster.skills[0]['name']} and does {monster.skills[0]['attack']} damage to {party[target_player].name}!\n\n")
                 time.sleep(2)
 
+    def update_stats(player, player_obj):
+        player['health_points'] = player_obj.hp
+        player['skill_points'] = player_obj.sp
+
+
     print(f"A battle with the {monster_list[current_monster]['name']} begins!\n\n")
 
     while (player1.hp > 0 and player2.hp > 0 and player3.hp > 0) and monster.hp > 0:
@@ -95,6 +100,9 @@ def battle_start():
         print(f"{player_stats(party_list[2])}")
         action_phase(player3)
         monster_phase()
+        update_stats(party_list[0], player1)
+        update_stats(party_list[1], player2)
+        update_stats(party_list[2], player3)
 
 
 def stun():
