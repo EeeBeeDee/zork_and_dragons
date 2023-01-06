@@ -6,12 +6,15 @@ question_list = [
         # 0 - beginning
         'question': (
             f"Start your adventure! Do you go {colored('left', 'red')}, "
-            f"{colored('right', 'red')}, {colored('forward', 'red')}"
+            f"{colored('forwards', 'red')}, {colored('right', 'red')}"
         ),
-        'answers': ['left', 'right', 'forwards'],
+        'answers': ['left', 'forwards', 'right'],
         'ans1': ['You turn left', 1, 'no_fight'],
-        'ans2': ['You turn Right', 2, 'no_fight'],
-        'ans3': ['You head forwards', 3, 'no_fight']
+        'ans2': ['You head forwards', 2, 'no_fight'],
+        'ans3': [(
+                'You turn Right, the road crumbles beneath your feet '
+                'the whole party fall in and die'
+                'a horrible death!'), 13, 'game_over']
     },
     {
         # 1 - goblin
@@ -206,7 +209,6 @@ question_list = [
     {
         # 11 - outside throne room - guard
         'question': (
-            "You manage to slay the guard!! \n"
             "you realize he was protecting the dark dragons throne room"
             "It sinks in that this is now the end of your journey..."
             f"Do you step into the{colored('throne', 'red')} room, "
@@ -246,5 +248,24 @@ question_list = [
             'You sit down at the table to inquire about what you '
             'overheard', 9, 'no_fight')],
         'ans3': ['You head forwards', 3, 'no_fight']
+    },
+    {
+        # 13 - Brigand on the bridge
+        'question': (
+            "On the bridge headed into A nearby town you come across "
+            "a brigand threatening some merchants, "
+            f"do you {colored('fight', 'red')} him off, "
+            f"{colored('ignore', 'red')} and carry on forwards, "
+            f"or {colored('threaten', 'red')} him yourself?"
+        ),
+        'answers': ['fight', 'ignore', 'threaten'],
+        'ans1': ['', 12, 'fight'],
+        'ans2': [(
+            'You ignore it all and continue on your way ',
+            0, 'no_fight'
+            )],
+        'ans3': [(
+                'You Threaten the Thief, he pleads for his life'), 11, 'gold'],
+        'monster_number': 1
     },
 ]

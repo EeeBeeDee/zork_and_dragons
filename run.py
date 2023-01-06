@@ -106,7 +106,6 @@ def ask_question(list):
         question = input(f"{question_obj['question']}. \n \n ")
         os.system('clear')
         global current_question
-        global current_monster
         global party_list
         global item_list
 
@@ -145,9 +144,31 @@ def ask_question(list):
                     ask_question(current_question)
 
             elif question == question_obj['answers'][2]:
-                print(f"{question_obj['ans3'][0]} \n")
-                current_question = question_obj['ans3'][1]
-                ask_question(current_question)
+                if question_obj['ans3'][2] == 'gold':
+                    item_list['coin'] = item_list['coin'] + 10
+                    print(f"{question_obj['ans3'][0]} \n")
+                    current_question = question_obj['ans3'][1]
+                    ask_question(current_question)
+                if question_obj['ans3'][2] == 'game_over':
+                    print(f"{question_obj['ans3'][0]} \n")
+                    print('Game Over! PLease try again!\n')
+                    input('Press enter to restart!\n')
+                    os.system('clear')
+                    current_question = 0
+                    current_monster = 0
+                    party_list = []
+                    item_list = {
+                        'health_potion': 3,
+                        'skill_potion': 3,
+                        'coin': 50
+                    }
+                    main()
+                    
+                else:
+                    print(f"{question_obj['ans3'][0]} \n")
+                    current_question = question_obj['ans3'][1]
+                    ask_question(current_question)
+
         elif question == 'item':
             item_screen()
         elif question == 'quit':
