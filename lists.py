@@ -74,12 +74,29 @@ party_list = []
 
 monster_list = [
     {
-        'name': 'goblin',
+        'name': 'Goblin',
         'health_points': 10,
         'attack': 2,
-        'skills': [{'name': 'Slice', 'attack': 3, }]
+        'skills': [{'name': 'Slice', 'attack': 3}]
     },
-    
+    {
+        'name': 'Brigand',
+        'health_points': 15,
+        'attack': 2,
+        'skills': [{'name': 'Cleave', 'attack': 3}]
+    },
+    {
+        'name': 'Demon Guard',
+        'health_points': 20,
+        'attack': 3,
+        'skills': [{'name': 'Rend', 'attack': 4}]
+    },
+    {
+        'name': 'Dark Dragon',
+        'health_points': 30,
+        'attack': 4,
+        'skills': [{'name': 'Dragon Breath', 'attack': 6}]
+    }
 ]
 
 item_list = {
