@@ -2,7 +2,7 @@ from termcolor import colored
 import os
 import copy
 
-from lists import class_list, party_list, monster_list,  item_list
+from lists import class_list, party_list, monster_list, item_list
 from questions import question_list
 from battle import battle_start
 
@@ -108,6 +108,7 @@ def ask_question(list):
         global current_question
         global current_monster
         global party_list
+        global item_list
 
         if question in question_obj['answers']:
             if question == question_obj['answers'][0]:
@@ -120,6 +121,13 @@ def ask_question(list):
                     item_list['coin'] = item_list['coin'] - 30
                     current_question = question_obj['ans1'][1]
                     ask_question(current_question)
+                elif question_obj['ans1'][2] == 'rest':
+                    party_list[0]['health_points'] = party_list[0]['health_points'] + 10
+                    party_list[1]['health_points'] = party_list[0]['health_points'] + 10
+                    party_list[2]['health_points'] = party_list[0]['health_points'] + 10
+                    item_list['coin'] = item_list['coin'] - 20
+                    current_question = question_obj['ans1'][1]
+                    ask_question(current_question)
                 else:
                     print(f"{question_obj['ans1'][0]} \n")
                     current_question = question_obj['ans1'][1]
@@ -128,7 +136,6 @@ def ask_question(list):
             elif question == question_obj['answers'][1]:
                 if question_obj['ans2'][2] == 'give':
                     item_list['health_potion'] = item_list['health_potion'] - 1
-                    print(item_list['health_potion'])
                     print(f"{question_obj['ans2'][0]} \n")
                     current_question = question_obj['ans2'][1]
                     ask_question(current_question)
