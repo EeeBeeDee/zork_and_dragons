@@ -69,6 +69,10 @@ def battle_start(current_monster):
                     print('You healed yourself for 5HP!\n')
         elif action == 'use':
             os.system('clear')
+        else:
+            os.system('clear')
+            print('Invalid option. Try again!\n')
+            action_phase(player)
 
     def monster_phase():
         if monster.hp <= 0:
