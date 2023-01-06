@@ -3,7 +3,7 @@ import random
 import time
 import os
 
-from lists import party_list, monster_list
+from lists import party_list, monster_list, item_list
 
 
 def battle_start(current_monster):
@@ -69,6 +69,22 @@ def battle_start(current_monster):
                     print('You healed yourself for 5HP!\n')
         elif action == 'use':
             os.system('clear')
+            potion = input(f"Do you want to use a {colored('1', 'red')}) Health Potion or a {colored('2', 'red')}) Skill Potion\n")
+
+            if potion == '1' and item_list['health_potion'] > 0:
+                item_list['health_potion'] -= 1
+                player.hp += 10
+                os.system('clear')
+                print(f"{player.name} restored 10HP!")
+            elif potion == '2' and item_list['skill_potion'] > 0:
+                item_list['skill_potion'] -= 1
+                player.sp += 10
+                os.system('clear')
+                print(f"{player.name} restored 10 skill points!")
+            else:
+                os.system('clear')
+                print('Invalid option. Try again!\n')
+                action_phase(player)
         else:
             os.system('clear')
             print('Invalid option. Try again!\n')
