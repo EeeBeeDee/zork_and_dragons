@@ -93,7 +93,7 @@ monster_list = [
     },
     {
         'name': 'Dark Dragon',
-        'health_points': 30,
+        'health_points': 40,
         'attack': 4,
         'skills': [{'name': 'Dragon Breath', 'attack': 6}]
     }

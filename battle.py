@@ -130,6 +130,14 @@ def battle_start(current_monster):
         update_stats(party_list[2], player3)
 
     print(f"Congratulations you have slain the {monster.name}!\n\n")
+    if current_monster == 3:
+        time.sleep(2)
+        print(  
+            f"{colored('CONGRATULATIONS', 'white', 'on_red')}"
+            "you have saved the realm and finished your quest!"
+            "Thanks for playing!")
+        input('Press enter to close the game!')
+        quit()  
     time.sleep(2)
     return
 

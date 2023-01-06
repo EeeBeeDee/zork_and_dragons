@@ -10,11 +10,11 @@ question_list = [
         ),
         'answers': ['left', 'forwards', 'right'],
         'ans1': ['You turn left', 1, 'no_fight'],
-        'ans2': ['You head forwards', 2, 'no_fight'],
+        'ans2': ['You head forwards', 13, 'no_fight'],
         'ans3': [(
                 'You turn Right, the road crumbles beneath your feet '
                 'the whole party fall in and die'
-                'a horrible death!'), 13, 'game_over']
+                'a horrible death!'), 0, 'game_over']
     },
     {
         # 1 - goblin
@@ -130,6 +130,7 @@ question_list = [
     {
         # 7 - entering town
         'question': (
+            "You arrive at the town or Riverstone"
             "As you walk in you notice an inn and a general shop. "
             "You ponder whither you have time to rest or shop or should "
             "you press on towards the mountain. "
@@ -204,14 +205,15 @@ question_list = [
         'ans2': [(
             'You sit down at the table to inquire about what you '
             'overheard', 9, 'no_fight')],
-        'ans3': ['You head forwards', 3, 'no_fight']
+        'ans3': ['You head forwards', 3, 'no_fight'],
+        'monster_number': 2
     },
     {
         # 11 - outside throne room - guard
         'question': (
             "you realize he was protecting the dark dragons throne room"
             "It sinks in that this is now the end of your journey..."
-            f"Do you step into the{colored('throne', 'red')} room, "
+            f"Do you step into the {colored('throne', 'red')} room, "
             f"continue exploring the {colored('castle', 'red')}  "
             "or now quaking in your boots decide to "
             f"{colored('give', 'red')} up and quit?"
@@ -219,7 +221,7 @@ question_list = [
         'answers': ['throne', 'castle', 'give'],
         'ans1': [(
             'Everyone takes a deep breath and steps into the gold laden '
-            'throne room '), 12, 'fight'],
+            'throne room '), 12, 'no_fight'],
         'ans2': [(
             'You sit down at the table to inquire about what you '
             'overheard'), 9, 'no_fight'],
@@ -235,19 +237,23 @@ question_list = [
             "Do you really think you can best me in combat?, or perhaps "
             "you make know the sacred words? It does not matter,"
             "your time in this world is at an end!'"
-            f"Do you{colored('fight', 'red')}, "
-            f"{colored('speak', 'red')} the holy words"
-            f"or{colored('beg', 'red')} for your?"
+            f"Do you {colored('fight', 'red')}, "
+            f"{colored('speak', 'red')} the holy words "
+            f"or {colored('beg', 'red')} for your life?"
             ),
-        'answers': ['throne', 'castle', 'give'],
+        'answers': ['fight', 'speak', 'beg'],
         'ans1': [(
             'Everyone takes a deep breath and steps into the gold laden '
-            'throne room ', 12, 'fight'
-            )],
+            'throne room '), 14, 'fight'
+            ],
         'ans2': [(
             'You sit down at the table to inquire about what you '
             'overheard', 9, 'no_fight')],
-        'ans3': ['You head forwards', 3, 'no_fight']
+        'ans3': [(
+            'You bow your heads and cry for your lives'
+            'Not noticing the dragon readying its flame'
+            'breath... You all cook in your armour'), 3, 'game_over'],
+        'monster_number': 3
     },
     {
         # 13 - Brigand on the bridge
@@ -259,13 +265,13 @@ question_list = [
             f"or {colored('threaten', 'red')} him yourself?"
         ),
         'answers': ['fight', 'ignore', 'threaten'],
-        'ans1': ['', 12, 'fight'],
+        'ans1': ['', 7, 'fight'],
         'ans2': [(
             'You ignore it all and continue on your way ',
-            0, 'no_fight'
+            7, 'no_fight'
             )],
         'ans3': [(
-                'You Threaten the Thief, he pleads for his life'), 11, 'gold'],
+                'You Threaten the Thief, he pleads for his life'), 7, 'gold'],
         'monster_number': 1
     },
 ]
