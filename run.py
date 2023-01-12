@@ -2,7 +2,7 @@ from termcolor import colored
 import os
 import copy
 
-from lists import class_list, party_list, monster_list, item_list
+from lists import class_list, party_list, item_list
 from questions import question_list
 from battle import battle_start
 
