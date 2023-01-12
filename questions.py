@@ -2,6 +2,25 @@ from termcolor import colored
 from lists import class_list, party_list, monster_list,  item_list
 
 question_list = [
+    """
+    Each question holds all data needed to progress in game.
+
+    'question' = Question printed in terminal to player.
+    'answers' = Three possible inputs that will progress the game.
+    'ansX' = Holds info needed to progress after corresponding
+    answer from 'answers' is entered.
+        ansx[0] = Message displayed to player upon input
+        ansx[1] = The next numbered question object in question_list to
+        be passed into the main ask_question() function
+        ansx[2] = Used to run functions after certain answers.
+        To enter battles etc.
+
+    'lose_item' = Signifies which item could be lost from
+    inventory after this question
+    'monster_number' = Signifies which monster object in monster
+    list is passed into battle function after said question.
+    """
+
     {
         # 0 - beginning
         'question': (

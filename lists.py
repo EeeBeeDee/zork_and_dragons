@@ -1,6 +1,11 @@
 from termcolor import colored
 
 class_list = [
+    """
+    Used as options for player when creating their party.
+    Deepcopy used when selections are placed in party_list    
+    """
+
     {
         'name': 'Knight',
         'health_points': 15,

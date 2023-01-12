@@ -11,6 +11,11 @@ in_battle = False
 
 
 def intro():
+    """
+    Acts as intro and tutorial to mechanics.
+    Function deals with only the first terminal screen.
+    """
+
     intro_text = colored('\nWELCOME TO ZORK AND DRAGONS! \n', 'green')
     print(intro_text)
     print(
@@ -49,6 +54,14 @@ def intro():
 
 
 def char_select(number):
+    """
+    Function to create player party using templates from class_list.
+    Prints info on each class and uses while loop to insure valid
+    selections are made.
+    Function is run individually 3 times in main() to place 3 chosen characters
+    in party_list using deepcopy from copy.
+    """
+
     os.system('clear')
     knight = class_list[0]
     mage = class_list[1]
@@ -101,6 +114,17 @@ def char_select(number):
 
 
 def ask_question(list):
+    """
+    Takes all relevant data from each question object in question_list.
+    Forms questions and options in terminal.
+    As game is question based it also deals with progression, Gameover etc.
+    Checks if typed input is part of available answers for each question
+    using while loop.
+    If special answers like "fight" are chosen it runs corresponding function
+    before returning to loop
+    Entire game is based off of this functions loop.
+
+    """
     while True:
         question_obj = question_list[list]
         question = input(f"{question_obj['question']}. \n \n ")
@@ -163,7 +187,7 @@ def ask_question(list):
                         'coin': 50
                     }
                     main()
-                    
+
                 else:
                     print(f"{question_obj['ans3'][0]} \n")
                     current_question = question_obj['ans3'][1]
@@ -186,6 +210,11 @@ def ask_question(list):
 
 
 def item_screen():
+    """
+    Shows party status including health, inventory and skills
+    returns to ask_question() loop upon hitting enter.
+    """
+
     p1 = party_list[0]
     p2 = party_list[1]
     p3 = party_list[2]
@@ -223,16 +252,17 @@ def item_screen():
             f"- {p3['skills'][1]['dis']}\n\n")
     )
 
-    input('\nHit any key to return')
+    input('\nHit enter to return')
     os.system('clear')
-
-    if in_battle is False:
-        ask_question(current_question)
-    elif in_battle:
-        battle_start()
+    ask_question(current_question)
 
 
 def name_select():
+    """
+    Assigns chosen names to each party character.
+    Asked individually 3 times in main()
+    """
+
     party_list[0]['player_name'] = input('Name your first character\n\n')
     party_list[1]['player_name'] = input('\nName your second character\n\n')
     party_list[2]['player_name'] = input('\nName your third character\n\n')
