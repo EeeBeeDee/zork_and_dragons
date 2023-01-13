@@ -57,6 +57,9 @@ This screen is activated by typing item at any stage during your adventure that 
 I also used multiple python libraries in this apps creation:
 
 - random -- was used to create the 50% chance of the stun mechanic working 
+- colored -- allowed me to highlight useable answers and draw attention to important words and phrases
+- os -- allowed me to simulate the clear command to remove previous questions and player turns from terminal
+- time -- used to create a pause after certain attacks to create dramatic effect
 
 # Deployment
 
