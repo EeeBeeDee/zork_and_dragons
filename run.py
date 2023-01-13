@@ -19,22 +19,23 @@ def intro():
     intro_text = colored('\nWELCOME TO ZORK AND DRAGONS! \n', 'green')
     print(intro_text)
     print(
-        ("A text based rpg adventure where you choose 3 party members and "
-            "set off on a quest to defeat the dark dragon. At every stop in "
-            "your journey you will be given 3 options to progress. the "
+        ("A text based rpg adventure where you choose 3 party members\nand "
+            "set off on a quest to defeat the dark dragon.\n"
+            "At every stop in "
+            "your journey you will be given 3 options to progress.\nThe "
             "terminal command needed for each one will be highlighted in "
             f"{colored('red', 'red')} like this!\n")
     )
 
     print(
         ('You will choose a team of 3 from 4 different adventurers and '
-            'start of with 3 health potions, 3 skill potions '
+            'start of with\n3 health potions, 3 skill potions '
             'and 50 coins\n')
     )
 
     print(
         (f"At any time during your quest type {colored('item', 'green')} to "
-            "open your inventory and see your current health and skill points "
+            "open your inventory\nand see your current health and skill points "
             f"\nOr type {colored('quit', 'red')} to restart the "
             "game and come back to this screen!\n\n")
     )
@@ -42,7 +43,7 @@ def intro():
     while True:
         question = input(
                     (f"please enter {colored('y', 'red')} to progress "
-                        "to the your character selection\n")
+                        "to the character selection\n")
                     )
 
         if question == 'y':
