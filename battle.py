@@ -137,14 +137,14 @@ def battle_start(current_monster):
             target_player = random.randint(0, 2)
             mon_attack = random.randint(0, 100)
             if mon_attack < 70:
-                party[target_player].hp = party[target_player].hp - monster.attack
+                party[target_player].hp = party[target_player].hp - monster.attack   # noqa
                 print(
                     (f"The beast does {monster.attack} damage "
                         f"to {party[target_player].name}!\n\n")
                 )
                 time.sleep(2)
             else:
-                party[target_player].hp = party[target_player].hp - monster.skills[0]['attack']
+                party[target_player].hp = party[target_player].hp - monster.skills[0]['attack']  # noqa
                 print(
                     (f"The beast uses {monster.skills[0]['name']} "
                         f"and does {monster.skills[0]['attack']} "
@@ -165,7 +165,7 @@ def battle_start(current_monster):
             "begins!\n\n")
     )
 
-    while (player1.hp > 0 and player2.hp > 0 and player3.hp > 0) and monster.hp > 0:
+    while (player1.hp > 0 and player2.hp > 0 and player3.hp > 0) and monster.hp > 0:  # noqa
         print(f"{player_stats(party_list[0])}")
         action_phase(player1)
         print(f"{player_stats(party_list[1])}")
