@@ -47,6 +47,22 @@ Who dealt the attack, who received and how much damage was done is always displa
 
 This screen is activated by typing item at any stage during your adventure that is outside of battle. It displays your current inventory and your parties current stats and abilities
 
+# Future expansion
+
+- Save System -- A save system would allow not only for people to step away but allow the games length to increase dramatically as it is constrained now by how long someone could stay playing in one sitting. A generated password system could work well which saved the current question players stats and names. Using a copy and paste-able piece of hex code that when inserted generated the lists I use now like party list and item list. 
+
+- Experience System -- A standard leveling up system that allows your party to increase its stats. It could be done in a few easy enough ways I feel. 
+
+    * A standard stat increase every level. so for example every time you level up you increase your attack by 2.
+    * An incremental system where the percentage your stats grow by increase as your level gets higher. Easily implemented in one way by using the actual level variable your character will have and adding or multiplying into the stat increase
+    * A system based off class where knights might get more health upon level up where archers get more attack.
+    
+- More Stats -- I would love to add more stats in to vary combat more. Two examples I can think of are: 
+
+    * A defense stat that multiple the attackers damage by a number < 1 to create a scenario where less damage is done the higher the defense is.
+    * A speed or dexterity stat to determine the order in which every character involved in battle takes their turn.
+- Build Your Own Adventure -- One of the original ideas I had for this project and one that influenced the way I built it was a game where you could create the questions, monsters and classes for the party. The way all questions are based of off a list of objects which all have the same keys, I could implement a build your own adventure mode using the game here as an example people could enter in all their own stories and monsters. I found this one in particular to be outside on my own capabilities at this time.
+
 
 # Technologies
 
@@ -60,6 +76,7 @@ I also used multiple python libraries in this apps creation:
 - colored -- allowed me to highlight useable answers and draw attention to important words and phrases
 - os -- allowed me to simulate the clear command to remove previous questions and player turns from terminal
 - time -- used to create a pause after certain attacks to create dramatic effect
+- copy -- used deepcopy to create full copies from my class_list list.
 
 # Deployment
 
