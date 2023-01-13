@@ -230,7 +230,7 @@ question_list = [
     {
         # 11 - outside throne room - guard
         'question': (
-            "you realize he was protecting the dark dragons throne room"
+            "You realize he was protecting the dark dragons throne room "
             "It sinks in that this is now the end of your journey..."
             f"Do you step into the {colored('throne', 'red')} room, "
             f"continue exploring the {colored('castle', 'red')}  "
