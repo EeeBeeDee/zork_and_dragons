@@ -45,21 +45,32 @@ def battle_start(current_monster):
         Uses ifs to control the 3 options available attack ,
         skill and use.
         """
-        action = input(f"Do you {colored('attack', 'red')}, use a {colored('skill', 'red')} or {colored('use', 'red')} an item?\n")
+        action = input(
+            (f"Do you {colored('attack', 'red')}, "
+                f"use a {colored('skill', 'red')} or "
+                f"{colored('use', 'red')} an item?\n")
+        )
 
         if action == 'attack':
             os.system('clear')
             monster.hp = monster.hp - player.attack
             print(f"{player.name} did {player.attack} damage!\n\n")
         elif action == 'skill':
-            skill = input(f"Do you want to use {colored('1', 'red')}) {player.skills[0]['name']} or {colored('2', 'red')}) {player.skills[1]['name']}\n")
+            skill = input(
+                (f"Do you want to use {colored('1', 'red')}) "
+                    f"{player.skills[0]['name']} or {colored('2', 'red')}) "
+                    f"{player.skills[1]['name']}\n")
+            )
             if skill == '1' and player.sp >= player.skills[0]['cost']:
                 os.system('clear')
                 player.sp = player.sp - player.skills[0]['cost']
                 monster.hp = monster.hp - player.skills[0]['attack']
                 if player.skills[0]['special'] is True:
                     monster.stun = stun()
-                print(f"{player.name} did {player.skills[0]['attack']} damage!\n\n")
+                print(
+                    (f"{player.name} did {player.skills[0]['attack']} "
+                        "damage!\n\n")
+                )
                 if monster.stun is True:
                     print("You managed to stun your foe!\n")
                     monster.stun = True
@@ -72,7 +83,10 @@ def battle_start(current_monster):
                 monster.hp = monster.hp - player.skills[1]['attack']
                 if player.skills[1]['special'] is True:
                     monster.stun = stun()
-                print(f"{player.name} did {player.skills[1]['attack']} damage!\n\n")
+                print(
+                    (f"{player.name} did {player.skills[1]['attack']} "
+                        "damage!\n\n")
+                )
                 if monster.stun is True:
                     print("You managed to stun your foe!\n")
                     monster.stun = True
@@ -81,7 +95,11 @@ def battle_start(current_monster):
                     print('You healed yourself for 5HP!\n')
         elif action == 'use':
             os.system('clear')
-            potion = input(f"Do you want to use a {colored('1', 'red')}) Health Potion or a {colored('2', 'red')}) Skill Potion\n")
+            potion = input(
+                (f"Do you want to use a {colored('1', 'red')}) "
+                    f"Health Potion or a {colored('2', 'red')}) "
+                    "Skill Potion\n")
+            )
 
             if potion == '1' and item_list['health_potion'] > 0:
                 item_list['health_potion'] -= 1
@@ -120,11 +138,18 @@ def battle_start(current_monster):
             mon_attack = random.randint(0, 100)
             if mon_attack < 70:
                 party[target_player].hp = party[target_player].hp - monster.attack
-                print(f"The beast does {monster.attack} damage to {party[target_player].name}!\n\n")
+                print(
+                    (f"The beast does {monster.attack} damage "
+                        f"to {party[target_player].name}!\n\n")
+                )
                 time.sleep(2)
             else:
                 party[target_player].hp = party[target_player].hp - monster.skills[0]['attack']
-                print(f"The beast uses {monster.skills[0]['name']} and does {monster.skills[0]['attack']} damage to {party[target_player].name}!\n\n")
+                print(
+                    (f"The beast uses {monster.skills[0]['name']} "
+                        f"and does {monster.skills[0]['attack']} "
+                        f"damage to {party[target_player].name}!\n\n")
+                )
                 time.sleep(2)
 
     def update_stats(player, player_obj):
@@ -135,7 +160,10 @@ def battle_start(current_monster):
         player['health_points'] = player_obj.hp
         player['skill_points'] = player_obj.sp
 
-    print(f"A battle with the {monster_list[current_monster]['name']} begins!\n\n")
+    print(
+        (f"A battle with the {monster_list[current_monster]['name']} "
+            "begins!\n\n")
+    )
 
     while (player1.hp > 0 and player2.hp > 0 and player3.hp > 0) and monster.hp > 0:
         print(f"{player_stats(party_list[0])}")
