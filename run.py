@@ -35,7 +35,8 @@ def intro():
 
     print(
         (f"At any time during your quest type {colored('item', 'green')} to "
-            "open your inventory\nand see your current health and skill points "
+            "open your inventory\n"
+            "and see your current health and skill points "
             f"\nOr type {colored('quit', 'red')} to restart the "
             "game and come back to this screen!\n\n")
     )
