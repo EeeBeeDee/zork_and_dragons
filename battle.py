@@ -166,11 +166,11 @@ def battle_start(current_monster):
     )
 
     while (player1.hp > 0 and player2.hp > 0 and player3.hp > 0) and monster.hp > 0:  # noqa
-        print(f"{player_stats(party_list[0])}")
+        player_stats(party_list[0])
         action_phase(player1)
-        print(f"{player_stats(party_list[1])}")
+        player_stats(party_list[1])
         action_phase(player2)
-        print(f"{player_stats(party_list[2])}")
+        player_stats(party_list[2])
         action_phase(player3)
         monster_phase()
         update_stats(party_list[0], player1)
