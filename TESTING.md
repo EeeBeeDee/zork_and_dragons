@@ -4,9 +4,13 @@ You can return to the README.md file [here.](./README.md)
 
 ## PEP8 validation
 
-All python files were passed through the CI validator at [pep8ci](https://pep8ci.herokuapp.com)
+All python files were passed through the CI validator at [pep8ci](https://pep8ci.herokuapp.com) and are all PEP8 compliant.
 
 ### Run.py
+
+![run.py validation](./documentation/run_validation.png)
+
+My run python file shoes no errors
 
 ### lists.py
 
@@ -21,6 +25,39 @@ My lists python file shoes no errors
 My questions python file shoes no errors
 
 ### battle.py
+
+![battle.py validation](./documentation/battle_validation.png)
+
+My battle python file shoes no errors
+
+## Error Handling 
+
+The player has 10 unique input instances in this game. In this section I will document all of these, show their potential valid and expected inputs and how my approach to user input error has stopped any possible break in the application.
+
+### input prompts
+
+These are the 10 prompts the player will possibly see :
+
+![Intro Prompt](./documentation/intro_prompt.png)
+
+![Class Prompt](./documentation/class_prompt.png)
+
+![Name Prompt](./documentation/class_prompt.png)
+
+![Question Prompt](./documentation/question_prompt.png)
+
+![Item Prompt](./documentation/item_prompt.png)
+
+![Battle Prompt](./documentation/battle_prompt.png)
+
+![Skill Prompt](./documentation/skill_prompt.png)
+
+![Use Prompt](./documentation/use_prompt.png)
+
+![Gameover Prompt](./documentation/gameover_prompt.png)
+
+![Win Prompt](./documentation/win_game_prompt.png)
+
 
 ## Manual Testing  
 

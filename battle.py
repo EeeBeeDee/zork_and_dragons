@@ -56,6 +56,7 @@ def battle_start(current_monster):
             monster.hp = monster.hp - player.attack
             print(f"{player.name} did {player.attack} damage!\n\n")
         elif action == 'skill':
+            print("\nHit just enter to return.\n")
             skill = input(
                 (f"Do you want to use {colored('1', 'red')}) "
                     f"{player.skills[0]['name']} or {colored('2', 'red')}) "
@@ -93,8 +94,12 @@ def battle_start(current_monster):
                 if player.skills[1]['attack'] == 0:
                     player.hp += 5
                     print('You healed yourself for 5HP!\n')
+            else:
+                os.system('clear')
+                print('Invalid option. Try again!\n')
+                action_phase(player)
         elif action == 'use':
-            os.system('clear')
+            print("\nHit just enter to return.\n")
             potion = input(
                 (f"Do you want to use a {colored('1', 'red')}) "
                     f"Health Potion or a {colored('2', 'red')}) "
