@@ -34,26 +34,85 @@ My battle python file shoes no errors
 
 The player has 10 unique input instances in this game. In this section I will document all of these, show their potential valid and expected inputs and how my approach to user input error has stopped any possible break in the application.
 
-### input prompts
+### Input Prompts
 
 These are the 10 prompts the player will possibly see :
 
+### Intro Prompt:
 ![Intro Prompt](./documentation/intro_prompt.png)
 
+Only y is accepted as input as seen below:
+
+![Intro Options](./documentation/intro_handling.png)
+
+### Class Prompts:
 ![Class Prompt](./documentation/class_prompt.png)
 
-![Name Prompt](./documentation/class_prompt.png)
+The player can only choose the three classes available in the input prompt. Using a while loop any other input will start the process again as seen below:
+    
+![Class Options](./documentation/class_handling.png)
 
+### Name Prompts:
+![Name Prompts](./documentation/class_prompt.png)
+
+As the names are meant to personalized I had no need for error handling here.
+
+### Adventure Prompts:
 ![Question Prompt](./documentation/question_prompt.png)
 
+The main part of the game means there is the most choice here. I use a while loop to come back around if any of the set answers are not given which are the 3 progress answers which are kept in a list and individual to each question, item which will bring you to the item screen and quit which will restart the game. All code snippets seen here below:
+
+![Question Option1](./documentation/question_handling1.png)
+
+![Question Option2](./documentation/question_handling2.png)
+
+![Question Option3](./documentation/question_handling3.png)
+
+![Question Option4](./documentation/question_handling4.png)
+
+![Question Option5](./documentation/question_handling5.png)
+
+### Item Prompt:
 ![Item Prompt](./documentation/item_prompt.png)
 
+This prompts only purpose is to return the player to their last point in the game after viewing their stats. as there is only one possible outcome now error handling was necessary.
+
+### Battle Prompt:
 ![Battle Prompt](./documentation/battle_prompt.png)
 
+In battle the player is given 3 options attack, skill and use. Instead of using a while loop any input outside of the 3 options causes the players turn function to run again along with an invalid message as seen below:
+
+![Battle Option1](./documentation/battle_handling1.png)
+
+![Battle Option2](./documentation/battle_handling2.png)
+
+![Battle Option3](./documentation/battle_handling3.png)
+
+![Battle Option4](./documentation/battle_invalid.png)
+
+### Skill Prompt:
 ![Skill Prompt](./documentation/skill_prompt.png)
 
+The skill menu is handled similarly to the battle prompt with only 2 correct answers and the same error handling as battle as seen below: 
+
+![Skill option](./documentation/skill_handling.png)
+
+![Skill option2](./documentation/skill_handling2.png)
+
+![Skill option3](./documentation/battle_invalid.png)
+
+### Use Prompt:
 ![Use Prompt](./documentation/use_prompt.png)
 
+The use menu is handled similarly to the battle prompt with only 2 correct answers and the same error handling as battle as seen below: 
+
+![use option](./documentation/use_handling.png)
+
+![use option2](./documentation/use_handling2.png)
+
+![use option3](./documentation/battle_invalid.png)
+
+### Gameover Prompt:
 ![Gameover Prompt](./documentation/gameover_prompt.png)
 
 ![Win Prompt](./documentation/win_game_prompt.png)
