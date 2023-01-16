@@ -45,8 +45,8 @@ question_list = [
         'ans1': ['', 3, 'fight'],
         'ans2': [(
             'You turn tail and run away from the goblin back to '
-            'the crossroads', 0, 'no_fight'
-            )],
+            'the crossroads'), 0, 'no_fight'
+            ],
         'ans3': ['You try talk to the goblin', 2, 'no_fight'],
         'monster_number': 0
     },
@@ -62,8 +62,8 @@ question_list = [
         'ans2': ['You hand over 1 potion', 3, 'give'],
         'ans3': [(
             'You turn tail and run away from the goblin  '
-            f'to the crossroads', 0, 'no_fight'
-            )],
+            f'to the crossroads'), 0, 'no_fight'
+            ],
         'lose_item': 'health_potion',
         'monster_number': 0
     },
@@ -104,7 +104,7 @@ question_list = [
             'head for the river'), 5, 'rest'],
         'ans2': [(
             'You double back and cross the path to head towards '
-            'the river', 5, 'no_fight')
+            'the river'), 5, 'no_fight'
             ],
         'ans3': ['You head forwards', 14, 'no_fight']
     },
