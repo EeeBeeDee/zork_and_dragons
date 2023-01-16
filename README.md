@@ -6,6 +6,13 @@ Made up of two main areas of gameplay. A choose your next step question based sy
 
 The live site is available at [Zork and Dragons](https://zork-and-dragons.herokuapp.com/)
 
+# Wireframe
+
+A basic wireframe to show the basic flow and logic behind the games process. [Lucidchart](https://www.lucidchart.com/pages)
+
+![WireFrame](./documentation/wireframe.png)
+
+
 # Features
 
 ## Intro and tutorial

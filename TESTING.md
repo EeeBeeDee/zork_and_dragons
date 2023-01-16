@@ -115,7 +115,12 @@ The use menu is handled similarly to the battle prompt with only 2 correct answe
 ### Gameover Prompt:
 ![Gameover Prompt](./documentation/gameover_prompt.png)
 
+Upon party death the Player is met with this prompt to restart the game. As there is only one outcome there was no need for error handling.
+
+### Win Prompt:
 ![Win Prompt](./documentation/win_game_prompt.png)
+
+Upon Beating the game the Player is met with this prompt to restart the game. As there is only one outcome there was no need for error handling.
 
 
 ## Manual Testing  
