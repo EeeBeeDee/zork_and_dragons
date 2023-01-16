@@ -4,6 +4,7 @@ import time
 import os
 
 from lists import party_list, monster_list, item_list
+from run import main
 
 
 def battle_start(current_monster):
@@ -190,6 +191,11 @@ def battle_start(current_monster):
             print(f"{player1.name} has fainted!")
             time.sleep(2)
         monster_phase()
+        if (player1.hp > 0 and player2.hp > 0 and player3.hp > 0):
+            print('Game Over! PLease try again!\n')
+            input('Press enter to restart!\n')
+            main()
+
         update_stats(party_list[0], player1)
         update_stats(party_list[1], player2)
         update_stats(party_list[2], player3)
