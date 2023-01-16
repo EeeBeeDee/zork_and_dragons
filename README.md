@@ -8,7 +8,7 @@ The live site is available at [Zork and Dragons](https://zork-and-dragons.heroku
 
 # Wireframe
 
-A basic wireframe to show the basic flow and logic behind the games process. [Lucidchart](https://www.lucidchart.com/pages)
+A basic wireframe to show the basic flow and logic behind the games process. [Lucidchart](https://www.lucidchart.com/pages) was used to create it.
 
 ![WireFrame](./documentation/wireframe.png)
 
@@ -73,6 +73,8 @@ This screen is activated by typing item at any stage during your adventure that 
 
 # Technologies
 
+[Lucidchart](https://www.lucidchart.com/pages) - Used to make the flow logic flow chart
+
 [Heroku](https://heroku.com) - Used to deploy app to the web
 
 [python](https://python.com) - App written in Python version 3.10.6
@@ -97,3 +99,8 @@ All testing and validation can be found in the [TESTING](./TESTING.md) markdown 
 
 # Acknowledgements
 
+[Tim_nelson](https://tim.2bn.dev/) - My CI mentor for all the guidance and really helping me get the knack of a new language quickly
+
+The CI slack channel specifically portfolio_project_3 for all the tips, tricks and help.
+
+[Valthalin](https://www.youtube.com/@Valthalinr) - Youtuber who helped me nail down some of the battle mechanics.
