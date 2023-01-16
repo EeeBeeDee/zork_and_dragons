@@ -80,10 +80,10 @@ question_list = [
         'answers': ['talk', 'river', 'forwards'],
         'ans1': [(
             'You call out to see if anyone is in the '
-            'camp', 4, 'no_fight'
-            )],
+            'camp'), 4, 'no_fight'
+            ],
         'ans2': ['You head towards the river', 5, 'no_fight'],
-        'ans3': ['You head forwards along the path', 6, 'no_fight']
+        'ans3': ['You head forwards along the path', 14, 'no_fight']
     },
     {
         # 4 - checking camp
@@ -97,13 +97,16 @@ question_list = [
             f"check the {colored('river', 'red')} behind you "
             f"or press {colored('forward', 'red')}"
         ),
-        'answers': ['rest', 'river', 'forwards'],
-        'ans1': ['You turn left', 1, 'no_fight'],
+        'answers': ['rest', 'river', 'forward'],
+        'ans1': [(
+            'You feel refreshed... and somewhat '
+            'lighter? A young boy mentions you should '
+            'head for the river'), 5, 'no_fight'],
         'ans2': [(
             'You double back and cross the path to head towards '
             'the river', 5, 'no_fight')
             ],
-        'ans3': ['You head forwards', 3, 'no_fight']
+        'ans3': ['You head forwards', 14, 'no_fight']
     },
     {
         # 5 - riverbed
@@ -122,7 +125,7 @@ question_list = [
             'it before you even depart. After a few minutes and some '
             'wet feet you depart down the river'), 6, 'no_fight'],
         'ans2': ['You turn Right', 2, 'no_fight'],
-        'ans3': ['You head forwards', 3, 'no_fight']
+        'ans3': ['You head forwards', 14, 'no_fight']
     },
     {
         # 6 - sailing down the river
@@ -159,8 +162,9 @@ question_list = [
         ),
         'answers': ['inn', 'shop', 'mountain'],
         'ans1': ['You enter the inn', 8, 'no_fight'],
-        'ans2': ['you enter the shop', 0, 'no_fight'],
-        'ans3': ['You head forwards', 3, 'no_fight']
+        'ans2': [(
+            '--Shop will be introduced in the next update!--'), 7, 'no_fight'],
+        'ans3': ['You head forwards towards the mountain', 14, 'no_fight']
     },
     {
         # 8 - inn
@@ -196,9 +200,9 @@ question_list = [
             'Handing over the coin you demand we leave at once '
             'to which he agrees'), 10, 'pay'],
         'ans2': [(
-            'You sit down at the table to inquire about what you '
-            'overheard', 9, 'no_fight')],
-        'ans3': ['You head forwards', 3, 'no_fight']
+            'Multiple men grab you by the scruff anf throw you '
+            'out of the in'), 7, 'no_fight'],
+        'ans3': ['', 8, 'no_fight']
     },
     {
         # 10 - secret entrance
@@ -222,9 +226,9 @@ question_list = [
             'You run into an armed deamon guard! No choice but to '
             'fight '), 11, 'fight'],
         'ans2': [(
-            'You sit down at the table to inquire about what you '
-            'overheard', 9, 'no_fight')],
-        'ans3': ['You head forwards', 3, 'no_fight'],
+            '--Gold room will be introduced '
+            'in the next update!--'), 10, 'no_fight'],
+        'ans3': ['You are now at the castle entrance', 15, 'no_fight'],
         'monster_number': 2
     },
     {
@@ -244,7 +248,7 @@ question_list = [
         'ans2': [(
             'You sit down at the table to inquire about what you '
             'overheard'), 9, 'no_fight'],
-        'ans3': ['You head forwards', 3, 'no_fight']
+        'ans3': ['You decide to head home to bed!', 1, 'game_over']
     },
     {
         # 12 - throne room
@@ -286,11 +290,71 @@ question_list = [
         'answers': ['fight', 'ignore', 'threaten'],
         'ans1': ['', 7, 'fight'],
         'ans2': [(
+            'You ignore it all and continue on your way '),
+            7, 'no_fight'
+            ],
+        'ans3': [(
+                'You Threaten the Thief, he pleads for his life'), 7, 'gold'],
+        'monster_number': 1
+    },
+    {
+        # 14 - Ahead of camp/ mountain path
+        'question': (
+            "You Begin up a mountain path. You see what you believe "
+            "to be the dragons keep high off in the distance. "
+            "Climbing would be the quickest but most dangerous"
+            f"do you {colored('climb', 'red')} the mountain face, "
+            f"{colored('road', 'red')} and carry on forwards, "
+            f"or {colored('town', 'red')} him yourself?"
+        ),
+        'answers': ['climb', 'road', 'town'],
+        'ans1': ['After a hard climb you reach the summit', 15, 'fight'],
+        'ans2': [(
             'You ignore it all and continue on your way ',
             7, 'no_fight'
             )],
         'ans3': [(
                 'You Threaten the Thief, he pleads for his life'), 7, 'gold'],
         'monster_number': 1
+    },
+    {
+        # 15 - Castle entrance
+        'question': (
+            "You arrive at the castle entrance "
+            "A terrifying deamon guard block the entrance to the keep"
+            f"do you {colored('fight', 'red')} the guard, "
+            f" return to the {colored('road', 'red')} behind, "
+            f"or decide to head back to{colored('town', 'red')}?"
+        ),
+        'answers': ['fight', 'road', 'town'],
+        'ans1': ['You fight the Guard', 16, 'fight'],
+        'ans2': [(
+            'You head back to the start of the road ',
+            14, 'no_fight'
+            )],
+        'ans3': [(
+                'YOu start the long journey back to Riverstone'), 7, 'gold'],
+        'monster_number': 2
+    },
+    {
+        # 16 - inside castle
+        'question': (
+            "After finally entering the castle you can tell the direction "
+            "the throne room is in as you can hear metal footsteps ahead..."
+            "You also notice a small until hallway to your right."
+            f"Do you head {colored('forward', 'red')} to the throne room, "
+            f"check the hallway to the {colored('right', 'red')}, "
+            f"or decide to {colored('exit', 'red')} the castle?"
+        ),
+        'answers': ['forward', 'right', 'exit'],
+        'ans1': [(
+            'You run into an armed deamon guard! No choice but to '
+            'fight '), 11, 'fight'],
+        'ans2': [(
+            '--Gold room will be introduced '
+            'in the next update!--'), 16, 'no_fight'],
+        'ans3': [(
+                'You exit the castle'), 15, 'gold'],
+        'monster_number': 2
     },
 ]

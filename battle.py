@@ -4,7 +4,6 @@ import time
 import os
 
 from lists import party_list, monster_list, item_list
-from run import main
 
 
 def battle_start(current_monster):
@@ -174,27 +173,27 @@ def battle_start(current_monster):
     while (player1.hp > 0 and player2.hp > 0 and player3.hp > 0) and monster.hp > 0:  # noqa
         player_stats(party_list[0])
         if player1.hp <= 0:
-            action_phase(player1)
-        else:
             print(f"{player1.name} has fainted!")
             time.sleep(2)
+        else:
+            action_phase(player1)
         player_stats(party_list[1])
-        if player1.hp <= 0:
-            action_phase(player1)
-        else:
-            print(f"{player1.name} has fainted!")
+        if player2.hp <= 0:
+            print(f"{player2.name} has fainted!")
             time.sleep(2)
+        else:
+            action_phase(player2)
         player_stats(party_list[2])
         if player1.hp <= 0:
-            action_phase(player1)
-        else:
-            print(f"{player1.name} has fainted!")
+            print(f"{player3.name} has fainted!")
             time.sleep(2)
+        else:
+            action_phase(player3)
         monster_phase()
-        if (player1.hp > 0 and player2.hp > 0 and player3.hp > 0):
+        if (player1.hp <= 0 and player2.hp <= 0 and player3.hp <= 0):
             print('Game Over! PLease try again!\n')
-            input('Press enter to restart!\n')
-            main()
+            input('Press enter to end the game!\n')
+            quit()
 
         update_stats(party_list[0], player1)
         update_stats(party_list[1], player2)
