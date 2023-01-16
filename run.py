@@ -148,8 +148,8 @@ def ask_question(list):
                     ask_question(current_question)
                 elif question_obj['ans1'][2] == 'rest':
                     party_list[0]['health_points'] = party_list[0]['health_points'] + 10  # noqa
-                    party_list[1]['health_points'] = party_list[0]['health_points'] + 10  # noqa
-                    party_list[2]['health_points'] = party_list[0]['health_points'] + 10  # noqa
+                    party_list[1]['health_points'] = party_list[1]['health_points'] + 10  # noqa
+                    party_list[2]['health_points'] = party_list[2]['health_points'] + 10  # noqa
                     item_list['coin'] = item_list['coin'] - 20
                     current_question = question_obj['ans1'][1]
                     ask_question(current_question)

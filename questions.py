@@ -101,7 +101,7 @@ question_list = [
         'ans1': [(
             'You feel refreshed... and somewhat '
             'lighter? A young boy mentions you should '
-            'head for the river'), 5, 'no_fight'],
+            'head for the river'), 5, 'rest'],
         'ans2': [(
             'You double back and cross the path to head towards '
             'the river', 5, 'no_fight')
@@ -178,7 +178,7 @@ question_list = [
         'answers': ['rest', 'table', 'town'],
         'ans1': [(
             'You all sleep well. Felling fully refreshed you step out into '
-            'the town at dawn ready to continue'), 7, 'no_fight'],
+            'the town at dawn ready to continue'), 7, 'rest'],
         'ans2': [(
             'You sit down at the table to inquire about what you '
             'overheard'), 9, 'no_fight'],
@@ -237,7 +237,7 @@ question_list = [
             "You realize he was protecting the dark dragons throne room "
             "It sinks in that this is now the end of your journey..."
             f"Do you step into the {colored('throne', 'red')} room, "
-            f"continue exploring the {colored('castle', 'red')}  "
+            f"continue exploring the {colored('castle', 'red')} "
             "or now quaking in your boots decide to "
             f"{colored('give', 'red')} up and quit?"
             ),
@@ -270,8 +270,8 @@ question_list = [
             'throne room '), 14, 'fight'
             ],
         'ans2': [(
-            'You sit down at the table to inquire about what you '
-            'overheard', 9, 'no_fight')],
+            '--Gold room will be introduced '
+            'in the next update!--'), 12, 'no_fight'],
         'ans3': [(
             'You bow your heads and cry for your lives'
             'Not noticing the dragon readying its flame'
@@ -303,16 +303,17 @@ question_list = [
             "You Begin up a mountain path. You see what you believe "
             "to be the dragons keep high off in the distance. "
             "Climbing would be the quickest but most dangerous"
-            f"do you {colored('climb', 'red')} the mountain face, "
-            f"{colored('road', 'red')} and carry on forwards, "
-            f"or {colored('town', 'red')} him yourself?"
+            f"do you take the {colored('road', 'red')} "
+            "and carry on forwards, "
+            f"{colored('climb', 'red')} the mountain face, "
+            f"or head back towards {colored('town', 'red')}?"
         ),
-        'answers': ['climb', 'road', 'town'],
-        'ans1': ['After a hard climb you reach the summit', 15, 'fight'],
+        'answers': ['road', 'climb', 'town'],
+        'ans1': ['', 15, 'fight'],
         'ans2': [(
-            'You ignore it all and continue on your way ',
-            7, 'no_fight'
-            )],
+            'After a hard climb you reach the summit'),
+            15, 'no_fight'
+            ],
         'ans3': [(
                 'You Threaten the Thief, he pleads for his life'), 7, 'gold'],
         'monster_number': 1
@@ -320,18 +321,18 @@ question_list = [
     {
         # 15 - Castle entrance
         'question': (
-            "You arrive at the castle entrance "
+            "You arrive at the castle entrance. "
             "A terrifying deamon guard block the entrance to the keep"
             f"do you {colored('fight', 'red')} the guard, "
-            f" return to the {colored('road', 'red')} behind, "
-            f"or decide to head back to{colored('town', 'red')}?"
+            f"return to the {colored('road', 'red')} behind, "
+            f"or decide to head back to {colored('town', 'red')}?"
         ),
         'answers': ['fight', 'road', 'town'],
         'ans1': ['You fight the Guard', 16, 'fight'],
         'ans2': [(
-            'You head back to the start of the road ',
+            'You head back to the start of the road '),
             14, 'no_fight'
-            )],
+            ],
         'ans3': [(
                 'YOu start the long journey back to Riverstone'), 7, 'gold'],
         'monster_number': 2
