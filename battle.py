@@ -172,15 +172,34 @@ def battle_start(current_monster):
 
     while (player1.hp > 0 and player2.hp > 0 and player3.hp > 0) and monster.hp > 0:  # noqa
         player_stats(party_list[0])
-        action_phase(player1)
+        if player1.hp <= 0:
+            action_phase(player1)
+        else:
+            print(f"{player1.name} has fainted!")
+            time.sleep(2)
         player_stats(party_list[1])
-        action_phase(player2)
+        if player1.hp <= 0:
+            action_phase(player1)
+        else:
+            print(f"{player1.name} has fainted!")
+            time.sleep(2)
         player_stats(party_list[2])
-        action_phase(player3)
+        if player1.hp <= 0:
+            action_phase(player1)
+        else:
+            print(f"{player1.name} has fainted!")
+            time.sleep(2)
         monster_phase()
         update_stats(party_list[0], player1)
         update_stats(party_list[1], player2)
         update_stats(party_list[2], player3)
+
+    if player1.hp <= 0:
+        player1.hp = 1
+    if player2.hp <= 0:
+        player2.hp = 1
+    if player3.hp <= 0:
+        player3.hp = 1
 
     print(f"Congratulations you have slain the {monster.name}!\n\n")
     if current_monster == 3:
